@@ -28,10 +28,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            width: 100%;
-            max-width: 450px;
-            padding: 20px;
-            box-sizing: border-box;
+            width: 340px;
         }
 
         /* Form element wide display */
@@ -44,8 +41,8 @@
 
         /* Circular Emblem / Logo */
         .logo-emblem { 
-            width: 180px; 
-            height: 180px; 
+            width: 150px; 
+            height: 150px; 
             margin-bottom: 25px; 
             border-radius: 50%;
             object-fit: cover;
@@ -57,19 +54,19 @@
         .error {
             color: #ffdddd;
             background: rgba(150, 0, 0, 0.8);
-            padding: 12px 15px;
+            padding: 10px 15px;
             border-radius: 8px;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             width: 100%;
             text-align: center;
             box-sizing: border-box;
             font-weight: bold;
-            font-size: 15px;
+            font-size: 14px;
         }
 
         .input-group { 
             position: relative;
-            margin-bottom: 22px; 
+            margin-bottom: 18px; 
             width: 100%;
             box-sizing: border-box;
         }
@@ -77,8 +74,8 @@
         /* Parchment Scroll Field Box */
         .parchment-box {
             background: linear-gradient(180deg, #fbf4d8 0%, #eadaa2 100%);
-            padding: 14px 18px;
-            border-radius: 6px;
+            padding: 9px 12px;
+            border-radius: 2px;
             border: 2px solid #8b5a2b;
             box-shadow: inset 0 0 8px rgba(139, 90, 43, 0.4), 0 4px 10px rgba(0,0,0,0.5);
         }
@@ -86,23 +83,23 @@
         /* Parchment Field Labels */
         .input-group label { 
             display: block; 
-            margin-bottom: 6px; 
+            margin-bottom: 4px; 
             color: #2b1810; 
             font-family: 'MedievalSharp', cursive, 'Cinzel', serif;
             font-weight: 700;
-            font-size: 18px;
+            font-size: 16px;
             letter-spacing: 0.5px;
         }
 
         /* Parchment Inputs */
         .input-group input { 
-            width: 85%; 
+            width: 80%; 
             padding: 6px 0; 
             border: none;
             background: transparent;
             color: #3d2612;
             font-family: 'Poppins', sans-serif;
-            font-size: 16px;
+            font-size: 14px;
             outline: none;
         }
 
@@ -113,36 +110,44 @@
         /* Scroll Decorative Icons */
         .input-icon {
             position: absolute;
-            right: 18px;
-            bottom: 18px;
-            font-size: 22px;
+            right: 15px;
+            bottom: 15px;
+            font-size: 20px;
             opacity: 0.8;
             user-select: none;
         }
 
-        /* Stylized Metallic Pill Button */
-        button { 
-            width: 80%; 
-            padding: 14px; 
+        /* Buttons Container */
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            gap: 12px;
             margin-top: 10px;
-            background: linear-gradient(180deg, #2b95e0 0%, #0056b3 100%); 
-            color: white; 
-            border: 2px solid #ffffff; 
-            border-radius: 30px; 
+        }
+
+        /* Black Metallic Buttons */
+        .btn { 
+            flex: 1;
+            padding: 10px 0; 
+            background: linear-gradient(180deg, #333333 0%, #111111 100%); 
+            color: #ffffff; 
+            border: 2px solid #b8860b; 
+            border-radius: 25px; 
             cursor: pointer; 
             font-family: 'Cinzel', serif;
-            font-size: 18px;
+            font-size: 14px;
             font-weight: 700;
-            letter-spacing: 1.5px;
+            letter-spacing: 1px;
             text-transform: uppercase;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6), inset 0 1px 2px rgba(255, 255, 255, 0.6);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.8), inset 0 1px 2px rgba(255, 255, 255, 0.2);
             transition: all 0.3s ease;
         }
 
-        button:hover {
-            background: linear-gradient(180deg, #3aa0eb 0%, #004494 100%);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.8), 0 0 10px rgba(0, 140, 255, 0.5);
-            transform: translateY(-2px);
+        .btn:hover {
+            background: linear-gradient(180deg, #444444 0%, #000000 100%);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.9), 0 0 8px rgba(184, 134, 11, 0.6);
+            transform: translateY(-1px);
         }
     </style>
 </head>
@@ -161,7 +166,7 @@
         </p>
     {% endif %}
 
-    <form action="{{ url_for('login') }}" method="POST">
+    <form id="authForm" action="{{ url_for('login') }}" method="POST">
 
         <div class="input-group parchment-box">
             <label for="username">
@@ -191,9 +196,10 @@
             <span class="input-icon">🔑</span>
         </div>
 
-        <button type="submit">
-            Login
-        </button>
+        <div class="button-container">
+            <button type="submit" formaction="{{ url_for('login') }}" class="btn">LOGIN</button>
+            <button type="submit" formaction="{{ url_for('signup') }}" class="btn">SIGN UP</button>
+        </div>
 
     </form>
 
