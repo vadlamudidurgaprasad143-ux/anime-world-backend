@@ -82,10 +82,11 @@ def login():
     return render_template("login.html")
 
 # ==========================
-# REGISTER
+# SIGNUP & REGISTER
 # ==========================
+@app.route("/signup", methods=["GET", "POST"])
 @app.route("/register", methods=["GET", "POST"])
-def register():
+def signup():
     if current_user.is_authenticated:
         return redirect(url_for("home"))
 
@@ -96,7 +97,7 @@ def register():
         # Check existing username
         existing_user = db.session.scalar(db.select(User).where(User.username == username))
         if existing_user:
-            return render_template("register.html", error="Username already exists!")
+            return render_template("login.html", error="Username already exists!")
 
         # Hash password
         hashed_password = generate_password_hash(password)
@@ -110,9 +111,11 @@ def register():
         db.session.add(user)
         db.session.commit()
 
-        return redirect(url_for("login"))
+        # Automatically log in after successful sign up
+        login_user(user)
+        return redirect(url_for("home"))
 
-    return render_template("register.html")
+    return render_template("login.html")
 
 # ==========================
 # LOGOUT
