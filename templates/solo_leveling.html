@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solo Leveling Characters & Details</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #090a0f, #181b26, #121624);
+            color: #ffffff;
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+            min-height: 100vh;
+        }
+
+        h1 {
+            color: #00d2ff;
+            font-size: 3rem;
+            margin-bottom: 30px;
+            text-shadow: 0 0 15px rgba(0, 210, 255, 0.6);
+        }
+
+        .circle-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .character-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .character-circle {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: #1a1a2e;
+            border: 3px solid #7928ca;
+            overflow: hidden;
+            box-shadow: 0 0 15px rgba(121, 40, 202, 0.5);
+            transition: all 0.3s ease;
+        }
+
+        .character-circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .character-name {
+            margin-top: 10px;
+            font-weight: bold;
+            color: #00f2fe;
+            font-size: 16px;
+            text-shadow: 0 0 8px rgba(0, 242, 254, 0.5);
+        }
+
+        .character-item:hover .character-circle {
+            border-color: #00ffcc;
+            transform: scale(1.15) rotate(5deg);
+            box-shadow: 0 0 25px rgba(0, 255, 204, 0.8);
+        }
+
+        .character-item:hover .character-name {
+            color: #9d4edd;
+        }
+
+        .info-card, .series-details-card {
+            background: linear-gradient(145deg, #14142b, #2a2a4e);
+            border: 2px solid #00f2fe;
+            border-radius: 16px;
+            padding: 25px;
+            max-width: 550px;
+            margin: 20px auto;
+            text-align: left;
+            box-shadow: 0 10px 30px rgba(0, 242, 254, 0.3);
+        }
+
+        .info-card {
+            display: none;
+            border-color: #7928ca;
+            box-shadow: 0 10px 30px rgba(121, 40, 202, 0.4);
+        }
+
+        .info-card h2, .series-details-card h2 {
+            color: #ffea00;
+            margin-top: 0;
+            text-shadow: 0 0 10px rgba(255, 234, 0, 0.5);
+        }
+
+        .info-card p, .series-details-card p {
+            line-height: 1.6;
+            color: #e0e0e0;
+            margin: 10px 0;
+            font-size: 15px;
+        }
+
+        .series-details-card span {
+            color: #00ffcc;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>⚔️ Solo Leveling World ⚔️</h1>
+
+    <div class="circle-container">
+        
+        <div class="character-item" onclick="showInfo('jinwoo')">
+            <div class="character-circle">
+                <img src="static/image/Jin-Woo.jpg" alt="Sung Jin-Woo">
+            </div>
+            <span class="character-name">Jin-Woo</span>
+        </div>
+
+        <div class="character-item" onclick="showInfo('cha')">
+            <div class="character-circle">
+               <img src="static/image/Hae-In.jpg" alt="Cha Hae-In">
+            </div>
+            <span class="character-name">Hae-In</span>
+        </div>
+
+        <div class="character-item" onclick="showInfo('choi')">
+            <div class="character-circle">
+                <img src="static/image/Jong-In.jpg" alt="Choi Jong-In">
+            </div>
+            <span class="character-name">Jong-In</span>
+        </div>
+
+        <div class="character-item" onclick="showInfo('baek')">
+            <div class="character-circle">
+                <img src="static/image/Yoon-Ho.jpg" alt="Baek Yoon-Ho">
+            </div>
+            <span class="character-name">Yoon-Ho</span>
+        </div>
+
+        <div class="character-item" onclick="showInfo('igris')">
+            <div class="character-circle">
+                <img src="static/image/images.jpg" alt="Igris">
+            </div>
+            <span class="character-name">Igris</span>
+        </div>
+
+    </div>
+
+    <!-- Character Info Cards -->
+    <div id="jinwoo" class="info-card">
+        <h2>Sung Jin-Woo</h2>
+        <p>Originally known as the "Weakest E-Rank Hunter," he gains the unique ability to level up infinitely after surviving a Double Dungeon, eventually becoming the Shadow Monarch.</p>
+    </div>
+
+    <div id="cha" class="info-card">
+        <h2>Cha Hae-In</h2>
+        <p>A powerful S-Rank Hunter and Vice-Guild Master of the Hunters Guild. She possesses exceptional sword skills and has a unique sense of smell for mana.</p>
+    </div>
+
+    <div id="choi" class="info-card">
+        <h2>Choi Jong-In</h2>
+        <p>An S-Rank Mage Hunter known as "The Ultimate Weapon." He is the Guild Master of the Hunters Guild and specializes in destructive fire magic.</p>
+    </div>
+
+    <div id="baek" class="info-card">
+        <h2>Baek Yoon-Ho</h2>
+        <p>An S-Rank Hunter and Master of the White Tiger Guild. He possesses beast transformation magic, granting him immense physical power and reflexes.</p>
+    </div>
+
+    <div id="igris" class="info-card">
+        <h2>Blood-Red Commander Igris</h2>
+        <p>A noble knight shadow extracted by Jin-Woo. Fiercely loyal and highly skilled with a broadsword, he serves as one of Jin-Woo's strongest army commanders.</p>
+    </div>
+
+    <!-- Series Credits Section -->
+    <div class="series-details-card">
+        <h2>🎬 Show Information</h2>
+        <p><span>Created by:</span> Chugong (Novel), DUBU / REDICE Studio (Webtoon)</p>
+        <p><span>Director:</span> Shunsuke Nakashige</p>
+        <p><span>Animation Studio:</span> A-1 Pictures</p>
+        <p><span>Music Composer:</span> Hiroyuki Sawano</p>
+        <p><span>Original Run:</span> 2024 - Present</p>
+    </div>
+
+    <script>
+        function showInfo(id) {
+            let cards = document.querySelectorAll('.info-card');
+            cards.forEach(card => card.style.display = 'none');
+            document.getElementById(id).style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
