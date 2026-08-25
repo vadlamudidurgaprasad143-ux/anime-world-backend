@@ -79,6 +79,14 @@ def solo_leveling():
     return render_template("solo_leveling.html")
 
 # ==========================
+# SHINCHAN SHOW PAGE
+# ==========================
+@app.route("/shinchan")
+@login_required
+def shinchan():
+    return render_template("shinchan.html")
+
+# ==========================
 # LOGIN
 # ==========================
 @app.route("/login", methods=["GET", "POST"])
