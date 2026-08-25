@@ -63,6 +63,22 @@ def doraemon():
     return render_template("doraemon.html")
 
 # ==========================
+# DEMON SLAYER SHOW PAGE
+# ==========================
+@app.route("/demonslayer")
+@login_required
+def demon_slayer():
+    return render_template("demon_slayer.html")
+
+# ==========================
+# SOLO LEVELING SHOW PAGE
+# ==========================
+@app.route("/sololeveling")
+@login_required
+def solo_leveling():
+    return render_template("solo_leveling.html")
+
+# ==========================
 # LOGIN
 # ==========================
 @app.route("/login", methods=["GET", "POST"])
