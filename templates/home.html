@@ -281,10 +281,13 @@
                 <img src="{{ url_for('static', filename='image/jujutsukaisen.jpg') }}" alt="Jujutsu Kaisen">
                 <div class="poster-title">Jujutsu Kaisen</div>
             </a>
-            <a href="#" class="poster-card">
+            
+            <!-- Doraemon Card Connected to Route -->
+            <a href="{{ url_for('doraemon') }}" class="poster-card">
                 <img src="{{ url_for('static', filename='image/doraemon.jpg') }}" alt="Doraemon">
                 <div class="poster-title">Doraemon</div>
             </a>
+
             <a href="#" class="poster-card">
                 <img src="{{ url_for('static', filename='image/shinchan.jpg') }}" alt="Shinchan">
                 <div class="poster-title">Shinchan</div>
