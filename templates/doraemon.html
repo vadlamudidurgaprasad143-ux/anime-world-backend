@@ -117,7 +117,7 @@
         
         <div class="character-item" onclick="showInfo('doraemon')">
             <div class="character-circle">
-                <img src="static/image/images.png" alt="Doraemon">
+                <img src="static/image/doraemon.png" alt="Doraemon">
             </div>
             <span class="character-name">Doraemon</span>
         </div>
@@ -192,7 +192,12 @@
         function showInfo(id) {
             let cards = document.querySelectorAll('.info-card');
             cards.forEach(card => card.style.display = 'none');
-            document.getElementById(id).style.display = 'block';
+            
+            // Convert parameter to lowercase so ID matching never fails
+            let targetCard = document.getElementById(id.toLowerCase());
+            if (targetCard) {
+                targetCard.style.display = 'block';
+            }
         }
     </script>
 
