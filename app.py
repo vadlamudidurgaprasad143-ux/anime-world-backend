@@ -55,6 +55,14 @@ def home():
     return redirect(url_for("login"))
 
 # ==========================
+# DORAEMON SHOW PAGE
+# ==========================
+@app.route("/doraemon")
+@login_required
+def doraemon():
+    return render_template("doraemon.html")
+
+# ==========================
 # LOGIN
 # ==========================
 @app.route("/login", methods=["GET", "POST"])
