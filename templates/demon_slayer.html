@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demon Slayer Characters & Details</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #0d0221, #0f0c20, #2a085c);
+            color: #ffffff;
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+            min-height: 100vh;
+        }
+
+        h1 {
+            color: #ff4b5c;
+            font-size: 3rem;
+            margin-bottom: 30px;
+            text-shadow: 0 0 15px rgba(255, 75, 92, 0.7);
+        }
+
+        .circle-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .character-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .character-circle {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: #12002b;
+            border: 3px solid #ff4b5c;
+            overflow: hidden;
+            box-shadow: 0 0 15px rgba(255, 75, 92, 0.5);
+            transition: all 0.3s ease;
+        }
+
+        .character-circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .character-name {
+            margin-top: 10px;
+            font-weight: bold;
+            color: #25d366;
+            font-size: 16px;
+            text-shadow: 0 0 8px rgba(37, 211, 102, 0.6);
+        }
+
+        .character-item:hover .character-circle {
+            border-color: #f9ed69;
+            transform: scale(1.15) rotate(-5deg);
+            box-shadow: 0 0 25px rgba(249, 237, 105, 0.8);
+        }
+
+        .character-item:hover .character-name {
+            color: #ff4b5c;
+        }
+
+        .info-card, .series-details-card {
+            background: linear-gradient(145deg, #1b003a, #3b0066);
+            border: 2px solid #ff4b5c;
+            border-radius: 16px;
+            padding: 25px;
+            max-width: 550px;
+            margin: 20px auto;
+            text-align: left;
+            box-shadow: 0 10px 30px rgba(255, 75, 92, 0.4);
+        }
+
+        .info-card {
+            display: none;
+            border-color: #25d366;
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
+        }
+
+        .info-card h2, .series-details-card h2 {
+            color: #f9ed69;
+            margin-top: 0;
+            text-shadow: 0 0 10px rgba(249, 237, 105, 0.5);
+        }
+
+        .info-card p, .series-details-card p {
+            line-height: 1.6;
+            color: #e0e0e0;
+            margin: 10px 0;
+            font-size: 15px;
+        }
+
+        .series-details-card span {
+            color: #25d366;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>⚔️ Demon Slayer World ⚔️</h1>
+
+    <div class="circle-container">
+        
+        <div class="character-item" onclick="showInfo('tanjiro')">
+            <div class="character-circle">
+                <img src="static/image/Tanjiro.jpg" alt="Demon Slayer">.
+            </div>
+            <span class="character-name">Tanjiro</span>
+        </div>
+
+        <div class="character-item" onclick="showInfo('nezuko')">
+            <div class="character-circle">
+                <img src="static/image/Nezuko.jpg" alt="Demon Slayer">.
+            </div>
+            <span class="character-name">Nezuko</span>
+        </div>
+
+        <div class="character-item" onclick="showInfo('zenitsu')">
+            <div class="character-circle">
+                <img src="static/image/Zenitsu.jpg" alt="Demon Slayer">.
+            </div>
+            <span class="character-name">Zenitsu</span>
+        </div>
+
+        <div class="character-item" onclick="showInfo('inosuke')">
+            <div class="character-circle">
+                <img src="static/image/Inosuke.jpg" alt="Demon Slayer">.
+            </div>
+            <span class="character-name">Inosuke</span>
+        </div>
+
+        <div class="character-item" onclick="showInfo('rengoku')">
+            <div class="character-circle">
+                <img src="static/image/Rengoku.jpg" alt="Demon Slayer">.
+            </div>
+            <span class="character-name">Rengoku</span>
+        </div>
+
+    </div>
+
+    <!-- Character Info Cards -->
+    <div id="tanjiro" class="info-card">
+        <h2>Tanjiro Kamado</h2>
+        <p>A kind-hearted boy who becomes a Demon Slayer to cure his sister Nezuko and avenge his family.</p>
+    </div>
+
+    <div id="nezuko" class="info-card">
+        <h2>Nezuko Kamado</h2>
+        <p>Tanjiro's younger sister who was turned into a demon, but fights alongside her brother to protect humans.</p>
+    </div>
+
+    <div id="zenitsu" class="info-card">
+        <h2>Zenitsu Agatsuma</h2>
+        <p>A cowardly Demon Slayer who unlocks his true power of Thunder Breathing when he falls asleep.</p>
+    </div>
+
+    <div id="inosuke" class="info-card">
+        <h2>Inosuke Hashibira</h2>
+        <p>A wild boy raised by boars who uses Beast Breathing and fights with dual serrated swords.</p>
+    </div>
+
+    <div id="rengoku" class="info-card">
+        <h2>Kyojuro Rengoku</h2>
+        <p>The cheerful and powerful Flame Hashira with an unwavering moral compass and incredible strength.</p>
+    </div>
+
+    <!-- Series Credits Section -->
+    <div class="series-details-card">
+        <h2>🎬 Show Information</h2>
+        <p><span>Created by:</span> Koyoharu Gotoge</p>
+        <p><span>Director:</span> Haruo Sotozaki</p>
+        <p><span>Animation Studio:</span> ufotable</p>
+        <p><span>Music Composer:</span> Yuki Kajiura, Go Shiina</p>
+        <p><span>Original Run:</span> 2019 - Present</p>
+    </div>
+
+    <script>
+        function showInfo(id) {
+            let cards = document.querySelectorAll('.info-card');
+            cards.forEach(card => card.style.display = 'none');
+            document.getElementById(id).style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
