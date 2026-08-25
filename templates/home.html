@@ -265,24 +265,30 @@
                 <img src="{{ url_for('static', filename='image/naruto.jpg') }}" alt="Naruto">
                 <div class="poster-title">Naruto</div>
             </a>
+
             <a href="#" class="poster-card">
                 <img src="{{ url_for('static', filename='image/pokemon.jpg') }}" alt="Pokémon">
                 <div class="poster-title">Pokémon</div>
             </a>
-            <a href="#" class="poster-card">
+
+            <!-- Solo Leveling Card -->
+            <a href="{{ url_for('solo_leveling') }}" class="poster-card">
                 <img src="{{ url_for('static', filename='image/sololeveling.jpg') }}" alt="Solo Leveling">
                 <div class="poster-title">Solo Leveling</div>
             </a>
-            <a href="#" class="poster-card">
+            
+            <!-- Demon Slayer Card -->
+            <a href="{{ url_for('demon_slayer') }}" class="poster-card">
                 <img src="{{ url_for('static', filename='image/demonslayer.jpg') }}" alt="Demon Slayer">
                 <div class="poster-title">Demon Slayer</div>
             </a>
+
             <a href="#" class="poster-card">
                 <img src="{{ url_for('static', filename='image/jujutsukaisen.jpg') }}" alt="Jujutsu Kaisen">
                 <div class="poster-title">Jujutsu Kaisen</div>
             </a>
             
-            <!-- Doraemon Card Connected to Route -->
+            <!-- Doraemon Card -->
             <a href="{{ url_for('doraemon') }}" class="poster-card">
                 <img src="{{ url_for('static', filename='image/doraemon.jpg') }}" alt="Doraemon">
                 <div class="poster-title">Doraemon</div>
