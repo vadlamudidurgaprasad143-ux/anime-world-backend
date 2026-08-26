@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shinchan Characters & Details</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #0d0221, #0f0c20, #2a085c);
+            color: #ffffff;
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+            min-height: 100vh;
+        }
+
+        h1 {
+            color: #ff4b5c;
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 0 0 15px rgba(255, 75, 92, 0.7);
+        }
+
+        .section-title {
+            color: #f9ed69;
+            font-size: 1.8rem;
+            margin: 30px 0 15px;
+            text-shadow: 0 0 10px rgba(249, 237, 105, 0.5);
+            border-bottom: 2px dashed rgba(249, 237, 105, 0.3);
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .circle-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
+            margin-bottom: 20px;
+        }
+
+        .character-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .character-circle {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: #12002b;
+            border: 3px solid #ff4b5c;
+            overflow: hidden;
+            box-shadow: 0 0 15px rgba(255, 75, 92, 0.5);
+            transition: all 0.3s ease;
+        }
+
+        .character-circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .character-name {
+            margin-top: 10px;
+            font-weight: bold;
+            color: #25d366;
+            font-size: 16px;
+            text-shadow: 0 0 8px rgba(37, 211, 102, 0.6);
+        }
+
+        .character-item:hover .character-circle {
+            border-color: #f9ed69;
+            transform: scale(1.15) rotate(-5deg);
+            box-shadow: 0 0 25px rgba(249, 237, 105, 0.8);
+        }
+
+        .character-item:hover .character-name {
+            color: #ff4b5c;
+        }
+
+        .info-card, .series-details-card {
+            background: linear-gradient(145deg, #1b003a, #3b0066);
+            border: 2px solid #ff4b5c;
+            border-radius: 16px;
+            padding: 25px;
+            max-width: 550px;
+            margin: 25px auto;
+            text-align: left;
+            box-shadow: 0 10px 30px rgba(255, 75, 92, 0.4);
+        }
+
+        .info-card {
+            display: none;
+            border-color: #25d366;
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
+        }
+
+        .info-card h2, .series-details-card h2 {
+            color: #f9ed69;
+            margin-top: 0;
+            text-shadow: 0 0 10px rgba(249, 237, 105, 0.5);
+        }
+
+        .info-card p, .series-details-card p {
+            line-height: 1.6;
+            color: #e0e0e0;
+            margin: 10px 0;
+            font-size: 15px;
+        }
+
+        .series-details-card span {
+            color: #25d366;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>🎈 Shinchan World 🎈</h1>
+
+    <!-- SECTION 1: THE NOHARA FAMILY -->
+    <h2 class="section-title">🏠 The Nohara Family</h2>
+    <div class="circle-container">
+        
+        <div class="character-item" onclick="showInfo('shinchan')">
+            <div class="character-circle">
+                <img src="{{ url_for('static', filename='image/Shinchan.jpg') }}" alt="Shinchan">
+            </div>
+            <span class="character-name">Shinchan</span>
+        </div>
+
+        <div class="character-item" onclick="showInfo('misae')">
+            <div class="character-circle">
+                 <img src="{{ url_for('static', filename='image/misae.jpg') }}" alt="Misae">
+            </div>
+            <span class="character-name">Misae</span>
+        </div>
+
+        <div class="character-item" onclick="showInfo('hiroshi')">
+            <div class="character-circle">
+                <img src="{{ url_for('static', filename='image/Hiroshi.jpg') }}" alt="Hiroshi">
+            </div>
+            <span class="character-name">Hiroshi</span>
+        </div>
+
+        <div class="character-item" onclick="showInfo('himawari')">
+            <div class="character-circle">
+                <img src="{{ url_for('static', filename='image/Himawari.jpg') }}" alt="Himawari">
+            </div>
+            <span class="character-name">Himawari</span>
+        </div>
+
+        <div class="character-item" onclick="showInfo('shiro')">
+            <div class="character-circle">
+                <img src="{{ url_for('static', filename='image/Shiro.jpg') }}" alt="Shiro">
+            </div>
+            <span class="character-name">Shiro</span>
+        </div>
+
+    </div>
+
+    <!-- SECTION 2: KASUKABE DEFENSE GROUP -->
+    <h2 class="section-title">🛡️ Kasukabe Defense Group</h2>
+    <div class="circle-container">
+
+        <div class="character-item" onclick="showInfo('kazama')">
+            <div class="character-circle">
+                <img src="{{ url_for('static', filename='image/Kazama.jpg') }}" alt="Kazama">
+            </div>
+            <span class="character-name">Kazama</span>
+        </div>
+
+        <div class="character-item" onclick="showInfo('nene')">
+            <div class="character-circle">
+                <img src="{{ url_for('static', filename='image/Nene.jpg') }}" alt="Nene">
+            </div>
+            <span class="character-name">Nene</span>
+        </div>
+
+        <div class="character-item" onclick="showInfo('masao')">
+            <div class="character-circle">
+                <img src="{{ url_for('static', filename='image/Masao.jpg') }}" alt="Masao">
+            </div>
+            <span class="character-name">Masao</span>
+        </div>
+
+        <div class="character-item" onclick="showInfo('bochan')">
+            <div class="character-circle">
+                 <img src="{{ url_for('static', filename='image/bo-chan.jpg') }}" alt="Bo-chan">
+            </div>
+            <span class="character-name">Bo-chan</span>
+        </div>
+
+    </div>
+
+    <!-- Family Info Cards -->
+    <div id="shinchan" class="info-card">
+        <h2>Shinnosuke Nohara (Shinchan)</h2>
+        <p>A mischievous 5-year-old boy who loves Action Kamen, chocobi snacks, and leads his friends in the Kasukabe Defense Group.</p>
+    </div>
+
+    <div id="misae" class="info-card">
+        <h2>Misae Nohara</h2>
+        <p>Shinchan's short-tempered but loving mother who manages the household, loves discount shopping sales, and keeps Shinchan in line.</p>
+    </div>
+
+    <div id="hiroshi" class="info-card">
+        <h2>Hiroshi Nohara</h2>
+        <p>Shinchan's hard-working father who works at a corporate office, loves drinking beer after work, and suffers from notoriously smelly feet.</p>
+    </div>
+
+    <div id="himawari" class="info-card">
+        <h2>Himawari Nohara</h2>
+        <p>Shinchan's baby sister who loves shiny objects, expensive jewelry, and handsome young men.</p>
+    </div>
+
+    <div id="shiro" class="info-card">
+        <h2>Shiro</h2>
+        <p>The Nohara family's fluffy white pet dog who is extremely smart, responsible, and often rescues Shinchan from trouble.</p>
+    </div>
+
+    <!-- Friends Info Cards -->
+    <div id="kazama" class="info-card">
+        <h2>Toru Kazama</h2>
+        <p>Shin-chan's smart, polite, and wealthy best friend who attends cram school and gets easily embarrassed by Shin-chan's antics.</p>
+    </div>
+
+    <div id="nene" class="info-card">
+        <h2>Nene Sakurada</h2>
+        <p>A cheerful girl who forces her friends to play realistic house games and secretly vents her anger on a stuffed rabbit doll.</p>
+    </div>
+
+    <div id="masao" class="info-card">
+        <h2>Masao Sato</h2>
+        <p>A timid, gentle, and sensitive boy who cries easily, loves drawing comic books, and is easily frightened by bullies.</p>
+    </div>
+
+    <div id="bochan" class="info-card">
+        <h2>Bo-chan</h2>
+        <p>A calm, quiet, and wise boy who rarely speaks, loves collecting unique rocks, and always has a running nose.</p>
+    </div>
+
+    <!-- Series Credits Section -->
+    <div class="series-details-card">
+        <h2>🎬 Show Information</h2>
+        <p><span>Created by:</span> Yoshito Usui</p>
+        <p><span>Directors:</span> Mitsuru Hongo, Keiichi Hara, Yuji Mutoh</p>
+        <p><span>Animation Studio:</span> Shin-Ei Animation</p>
+        <p><span>Music Composer:</span> Aequo, Toshiyuki Arakawa</p>
+        <p><span>Original Run:</span> 1992 - Present</p>
+    </div>
+
+    <script>
+        function showInfo(id) {
+            let cards = document.querySelectorAll('.info-card');
+            cards.forEach(card => card.style.display = 'none');
+            document.getElementById(id).style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
